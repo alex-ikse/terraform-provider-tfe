@@ -44,6 +44,7 @@ resource "tfe_admin_organization_settings" "test-settings" {
   workspace_limit                       = 15
   access_beta_tools                     = false
   global_module_sharing                 = false
+  global_provider_sharing               = false
   module_sharing_consumer_organizations = [
     tfe_organization.a-module-consumer.name
   ]
@@ -58,6 +59,7 @@ The following arguments are supported:
 * `accessBetaTools` - (Optional) True if the organization has access to beta tool versions.
 * `workspaceLimit` - (Optional) Maximum number of workspaces for this organization. If this number is set to a value lower than the number of workspaces the organization has, it will prevent additional workspaces from being created, but existing workspaces will not be affected. If set to 0, this limit will have no effect.
 * `globalModuleSharing` - (Optional) If true, modules in the organization's private module repository will be available to all other organizations. Enabling this will disable any previously configured module_sharing_consumer_organizations. Cannot be true if module_sharing_consumer_organizations is set.
+* `globalProviderSharing` - (Optional) If true, providers in the organization's private provider repository will be available to all other organizations.
 * `moduleSharingConsumerOrganizations` - (Optional) A list of organization names to share modules in the organization's private module repository with. Cannot be set if global_module_sharing is true.
 
 ## Attributes Reference

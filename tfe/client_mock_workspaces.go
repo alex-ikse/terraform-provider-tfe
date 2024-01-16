@@ -172,3 +172,15 @@ func (m *mockWorkspaces) SafeDelete(ctx context.Context, organization string, wo
 func (m *mockWorkspaces) SafeDeleteByID(ctx context.Context, workspaceID string) error {
 	panic("not implemented")
 }
+
+func (m *mockWorkspaces) DeleteDataRetentionPolicy(ctx context.Context, workspaceID string) error {
+	panic("not implemented")
+}
+
+func (m *mockWorkspaces) ReadDataRetentionPolicy(ctx context.Context, workspaceID string) (*tfe.DataRetentionPolicy, error) {
+	panic("not implemented")
+}
+
+func (m *mockWorkspaces) SetDataRetentionPolicy(context.Context, string, tfe.DataRetentionPolicySetOptions) (*tfe.DataRetentionPolicy, error) {
+	panic("not implemented")
+}
